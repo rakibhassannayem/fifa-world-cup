@@ -28,9 +28,8 @@
   align-items: center;
   gap: 80px;
 }
-/* Q1: flex 1 doesn't making any diff */
 .banner-left{
-  margin-left: 120px;
+  margin-left: 50px;
   flex: 1;
 }
 .banner h1{
@@ -50,5 +49,69 @@
 }
 .banner img{
   display: block;
+  max-width: 100%;
+}
+
+/* upcoming matches */
+.upcoming-matches{
+  display: flex;
+  gap: 55px;
+}
+.upcoming-matches-left{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: fit-content;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 10px;
+  width: 25%;
+}
+.upcoming-matches-left button{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.upcoming-matches-left button:nth-child(1),
+.upcoming-matches-left button:nth-child(2){
+  background-color: white;
+  color: #161616;
+}
+.upcoming-matches-right{
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.upcoming-matches-right .card{
+  border: 1px solid #E8E8E8;
+  border-radius: 10px;
+}
+.upcoming-matches-right .card img{
   width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.upcoming-matches-right .card-texts{
+  padding: 20px;
+}
+.upcoming-matches-right .card-texts button{
+  margin-bottom: 15px;
+  padding: 4px 17px;
+  border: 2px solid #161616;
+  border-radius: 5px;
+  color: #161616;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.upcoming-matches-right .card-texts h1{
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.upcoming-matches-right .card-texts .icons{
+  color: rgba(22, 22, 22, 0.7);
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
