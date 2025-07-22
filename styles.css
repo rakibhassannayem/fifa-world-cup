@@ -7,7 +7,7 @@
 }
 .container{
   max-width: 1280px;
-  margin: auto;
+  margin: 0 auto;
 }
 .btn {
   background-color: #dd0000;
@@ -16,24 +16,46 @@
   font-weight: 600;
   color: white;
   border: none;
+  cursor: pointer;
+}
+img{
+  max-width: 100%;
+}
+
+@keyframes banner-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  5% {
+    color: orange;
+  }
+  50% {
+    opacity: 0.5;
+    color: yellow;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 /* custom styles */
 .banner{
   background-color: black;
-  margin-top: 80px;
-  margin-bottom: 100px;
-  border-radius: 30px;
+  color: white;
+  margin: 50px auto;
+  border-radius: 20px;
   display: flex;
   align-items: center;
-  gap: 80px;
+  animation: banner-animation .7s forwards;
 }
 .banner-left{
   margin-left: 50px;
   flex: 1;
 }
 .banner h1{
-  color: white;
   font-size: 4.375rem;
   font-weight: bold;
   margin-bottom: 20px;
@@ -41,15 +63,14 @@
 }
 .banner p{
   color: white;
+  max-width: 80%;
   margin-bottom: 30px;
 }
-/* Q1.1: use of flex-1 here */
 .banner-right{
   flex: 1;
 }
 .banner img{
   display: block;
-  max-width: 100%;
 }
 
 /* upcoming matches */
@@ -114,4 +135,50 @@
   display: flex;
   gap: 12px;
   align-items: center;
+}
+
+/* Laptop Responsive */
+@media (max-width: 992px){
+  .banner, .upcoming-matches{
+    flex-direction: column;
+  }
+  .banner{
+    padding-top: 20px;
+  }
+  .upcoming-matches-left{
+    width: 100%;
+    background-color: transparent;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+  }
+  .upcoming-matches-left button{
+    border: 1px solid #E8E8E8;
+    padding: 10px 50px;
+  }
+  .upcoming-matches-right{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (max-width: 768px){
+  .banner, .upcoming-matches{
+    flex-direction: column;
+  }
+  .banner-left{
+    align-items: center;
+    
+  }
+  .upcoming-matches-left{
+    flex-direction: column;
+    background-color: transparent;
+    align-items: center;
+  }
+  .upcoming-matches-left button{
+    border: 1px solid #E8E8E8;
+    padding: 10px 50px;
+  }
+  .upcoming-matches-right{
+    grid-template-columns: 1fr;
+  }
 }
