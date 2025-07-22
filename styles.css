@@ -37,17 +37,12 @@ img {
   }
 }
 @keyframes banner-img-animation {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
+  
+  50% {  
     color: yellow;
-    transform: translateX(-50px);
+    transform: translateX(-100%);
   }
-  100% {
-    opacity: 1;
-  }
+  
 }
 
 /* custom styles */
@@ -80,7 +75,7 @@ img {
 }
 .banner img {
   display: block;
-  animation: banner-img-animation 0.5s ease forwards;
+  animation: banner-img-animation 5s ease forwards infinite;
 }
 
 /* upcoming matches */
